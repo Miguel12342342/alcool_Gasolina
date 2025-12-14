@@ -1,5 +1,8 @@
 # ⛽ Gasolina ou Álcool? (O Analisador de Combustível) 💡
 
+<img width="495" height="703" alt="image" src="https://github.com/user-attachments/assets/934f425d-b359-43cb-8c76-8297e8b76aa7" />
+
+
 ## ✨ Sobre o Projeto
 
 Este é um aplicativo desenvolvido para ajudar o usuário a tomar a decisão mais econômica no momento de abastecer o veículo flex. O projeto realiza um cálculo simples, mas essencial, comparando o preço da gasolina com o preço do álcool (etanol) para determinar qual combustível oferece o melhor custo-benefício, considerando o rendimento médio do etanol (que geralmente é 70% do rendimento da gasolina).
