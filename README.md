@@ -1,4 +1,4 @@
-# ⛽ Gasolina ou Álcool? (O Analisador de Combustível) 💡
+## ⛽ Gasolina ou Álcool? (O Analisador de Combustível) 💡
 
 <img width="495" height="703" alt="image" src="https://github.com/user-attachments/assets/934f425d-b359-43cb-8c76-8297e8b76aa7" />
 
