@@ -1,6 +1,5 @@
 # FuelWise — Álcool ou Gasolina?
 
-
 > Descubra em segundos qual combustível é mais vantajoso para o seu carro flex.
 
 <img width="390" height="850" alt="Screenshot do app FuelWise" src="https://github.com/user-attachments/assets/6abf96fa-9097-4ec3-86b2-b5a2a9f53e9a" />
