@@ -1,4 +1,6 @@
-# ⛽ Gasolina ou Álcool? (O Analisador de Combustível) 💡
+## ⛽ Gasolina ou Álcool? (O Analisador de Combustível) 💡
+
+<img width="390" height="850" alt="alcool gasosa" src="https://github.com/user-attachments/assets/6abf96fa-9097-4ec3-86b2-b5a2a9f53e9a" />
 
 ## ✨ Sobre o Projeto
 
@@ -78,4 +80,7 @@ Contribuições são o que tornam a comunidade de código aberto um lugar incrí
 ## 📝 Licença
 
 Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1743eaeea1f91750e64407a8b398441cc795797e
