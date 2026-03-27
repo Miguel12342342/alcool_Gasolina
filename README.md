@@ -79,8 +79,3 @@ Contribuições são o que tornam a comunidade de código aberto um lugar incrí
 
 Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
-## 👤 Contato
-
-Seu Nome - [@SeuHandleNoTwitter](https://twitter.com/SeuHandleNoTwitter) (Opcional)
-
-Link do Projeto: [https://github.com/SeuUsuario/NomeDoSeuProjeto](https://github.com/SeuUsuario/NomeDoSeuProjeto)
