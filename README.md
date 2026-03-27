@@ -1,86 +1,106 @@
-## ⛽ Gasolina ou Álcool? (O Analisador de Combustível) 💡
+# FuelWise — Álcool ou Gasolina?
 
-<img width="390" height="850" alt="alcool gasosa" src="https://github.com/user-attachments/assets/6abf96fa-9097-4ec3-86b2-b5a2a9f53e9a" />
+> Descubra em segundos qual combustível é mais vantajoso para o seu carro flex.
 
-## ✨ Sobre o Projeto
+<img width="390" height="850" alt="Screenshot do app FuelWise" src="https://github.com/user-attachments/assets/6abf96fa-9097-4ec3-86b2-b5a2a9f53e9a" />
 
-Este é um aplicativo desenvolvido para ajudar o usuário a tomar a decisão mais econômica no momento de abastecer o veículo flex. O projeto realiza um cálculo simples, mas essencial, comparando o preço da gasolina com o preço do álcool (etanol) para determinar qual combustível oferece o melhor custo-benefício, considerando o rendimento médio do etanol (que geralmente é 70% do rendimento da gasolina).
+---
 
-## 💡 Como Funciona o Cálculo
+## Sobre o projeto
 
-A regra de ouro para carros flex é que o álcool só é vantajoso se o seu preço for **menor ou igual a 70%** do preço da gasolina.
+O **FuelWise** é um aplicativo Flutter que aplica a regra dos 70% para ajudar motoristas de carros flex a decidir entre álcool (etanol) e gasolina no momento do abastecimento. Além da recomendação, exibe a razão de preço e estima a economia por tanque cheio.
 
-O aplicativo realiza o seguinte cálculo:
+---
+
+## Como funciona o cálculo
+
+Carros flex têm rendimento médio de **70% com álcool** em relação à gasolina — ou seja, consomem mais litros para percorrer a mesma distância. O álcool só é vantajoso quando seu preço compensa esse consumo extra:
 
 $$
-\text{Preço Máximo Vantajoso do Álcool} = \text{Preço da Gasolina} \times 0.70
+\text{razão} = \frac{\text{Preço do Álcool}}{\text{Preço da Gasolina}}
 $$
 
-Onde:
-* Se **Preço do Álcool** $\le$ **Preço Máximo Vantajoso**, o resultado é **Álcool**.
-* Se **Preço do Álcool** $>$ **Preço Máximo Vantajoso**, o resultado é **Gasolina**.
+| Resultado | Condição |
+|---|---|
+| Abasteça com **Álcool** | razão ≤ 0,70 |
+| Abasteça com **Gasolina** | razão > 0,70 |
 
-## 🛠️ Tecnologias Utilizadas
+**Estimativa de economia por tanque (50 L):**
 
-Liste aqui as tecnologias que você utilizou para desenvolver o aplicativo (Exemplos):
+$$
+\text{Economia} = (\text{P\textsubscript{gasolina}} \times 50) - \left(\text{P\textsubscript{álcool}} \times \frac{50}{0{,}70}\right)
+$$
 
-* **Linguagem de Programação:** Dart
-* **Framework/Biblioteca:** React Native / Flutter / Android Studio / etc.
-* **Interface de Usuário:** HTML, CSS
+---
 
-## ⚙️ Instalação e Execução (Para Desenvolvedores)
+## Tecnologias
 
-Siga os passos abaixo para ter uma cópia do projeto rodando em sua máquina local para fins de desenvolvimento e teste.
+| Pacote | Versão | Uso |
+|---|---|---|
+| Flutter SDK | ≥ 3.10 | Framework UI multiplataforma |
+| Dart SDK | ≥ 3.10 | Linguagem |
+| [provider](https://pub.dev/packages/provider) | ^6.1.5 | Gerenciamento de estado (ChangeNotifier) |
+| [google_fonts](https://pub.dev/packages/google_fonts) | ^8.0.2 | Tipografia (Inter) |
+| [intl](https://pub.dev/packages/intl) | ^0.20.2 | Formatação de moeda (pt-BR) |
+
+---
+
+## Arquitetura
+
+```
+lib/
+├── main.dart                  # Entrada — registra MultiProvider
+├── pages/
+│   └── home_page.dart         # Tela principal com feedback de erro
+├── providers/
+│   └── fuel_provider.dart     # Lógica de negócio e estado
+├── widgets/
+│   ├── custom_header.dart     # Header com botão de reset
+│   ├── hero_banner.dart       # Banner com gradiente local
+│   ├── fuel_input_card.dart   # Card de entrada de preço
+│   ├── calculate_button.dart  # Botão de calcular
+│   └── result_section.dart    # Resultado, razão e economia
+└── theme/
+    ├── app_colors.dart        # Paleta de cores e gradientes
+    └── app_theme.dart         # ThemeData Material 3
+```
+
+O estado global vive no `FuelProvider` (Provider + ChangeNotifier). Widgets são todos `StatelessWidget`, exceto `HomePage` que gerencia os `TextEditingController` e o listener de erro.
+
+---
+
+## Rodando o projeto
 
 ### Pré-requisitos
 
-* Node.js (ou a tecnologia base do seu projeto)
-* Git
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) ≥ 3.10
+- Android Studio ou VS Code com extensão Flutter
+- Dispositivo físico ou emulador conectado
 
 ### Passos
 
-1.  **Clone o Repositório:**
-    ```bash
-    git clone [https://github.com/SeuUsuario/NomeDoSeuProjeto.git](https://github.com/SeuUsuario/NomeDoSeuProjeto.git)
-    ```
+```bash
+# 1. Clone o repositório
+git clone https://github.com/Miguel12342342/alcool_Gasolina.git
+cd alcool_Gasolina
 
-2.  **Entre na Pasta do Projeto:**
-    ```bash
-    cd NomeDoSeuProjeto
-    ```
+# 2. Instale as dependências
+flutter pub get
 
-3.  **Instale as Dependências (se houver):**
-    ```bash
-    npm install
-    ```
-    *ou*
-    ```bash
-    pip install -r requirements.txt
-    ```
+# 3. Execute
+flutter run
+```
 
-4.  **Execute o Aplicativo:**
-    ```bash
-    npm start
-    ```
-    *ou*
-    ```bash
-    python app.py
-    ```
+### Rodando os testes
 
-## 🤝 Contribuição
+```bash
+flutter test
+```
 
-Contribuições são o que tornam a comunidade de código aberto um lugar incrível para aprender, inspirar e criar. Qualquer contribuição que você fizer será **muito apreciada**.
+Saída esperada: **13 testes passando**, cobrindo recomendação de combustível, cálculo de economia, entradas inválidas e reset.
 
-1.  Faça um Fork do Projeto.
-2.  Crie um Branch para sua Feature (`git checkout -b feature/NovaFeature`).
-3.  Faça o Commit das suas alterações (`git commit -m 'Adiciona NovaFeature'`).
-4.  Faça o Push para o Branch (`git push origin feature/NovaFeature`).
-5.  Abra um Pull Request.
+---
 
-## 📝 Licença
+## Licença
 
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
-<<<<<<< HEAD
-
-=======
->>>>>>> 1743eaeea1f91750e64407a8b398441cc795797e
+Distribuído sob a licença MIT. Veja [`LICENSE`](LICENSE) para mais informações.
