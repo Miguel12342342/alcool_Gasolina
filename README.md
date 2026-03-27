@@ -1,7 +1,6 @@
 ## ⛽ Gasolina ou Álcool? (O Analisador de Combustível) 💡
 
-<img width="495" height="703" alt="image" src="https://github.com/user-attachments/assets/934f425d-b359-43cb-8c76-8297e8b76aa7" />
-
+<img width="390" height="850" alt="alcool gasosa" src="https://github.com/user-attachments/assets/6abf96fa-9097-4ec3-86b2-b5a2a9f53e9a" />
 
 ## ✨ Sobre o Projeto
 
